@@ -5,6 +5,8 @@ if (isset($_POST["hello"])) {
     $_SESSION["username"] = substr($_POST["username"], 0, 16);
     $_SESSION["password"] = sha1($_POST["password"]);
 
+    header("Location: index.php");
+
 };
 
 
@@ -12,6 +14,8 @@ if (isset($_POST["hello"])) {
 if (isset($_GET["goodbye"])) {
 
     session_destroy();
+
+    header("Location: index.php");
 
 };
 
