@@ -37,6 +37,13 @@ $sql = "SELECT {$table_prefix}owner.name        owner     ,                     
        "       ON {$table_prefix}type.id = {$table_prefix}issue.type_id             ".
        "WHERE {$table_prefix}issue.id = $id                                         ";
 if (!$result = mysql_query($sql)) print_error();
+
+if (mysql_num_rows($result) !== 1) {
+
+    die("you must specify a valid id.");
+
+};
+
 $row = mysql_fetch_array($result);
 
 $owner     = output($row["owner"]);
