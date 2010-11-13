@@ -63,14 +63,14 @@ header('Content-Type: text/html; charset=utf-8');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
-        <title>create an issue&mdash;<?php echo $project_name; ?></title>
+        <title>create&mdash;issue&mdash;<?php echo $project_name; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="style.php" />
     </head>
     <body>
         <div id="contain">
             <h1><a href="index.php"><?php echo $project_name; ?></a></h1>
-            <h2>create an issue</h2>
+            <h2><a href="index.php">issues</a> &raquo; create</h2>
             <form action="issue_create.php" method="post">
                 <table id="create">
                     <tr>

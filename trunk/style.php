@@ -11,6 +11,10 @@ a {
     color: black;
 }
 
+img {
+    border-width: 0;
+}
+
 input {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
@@ -46,8 +50,6 @@ table#auth tr td input {
     width: 125px;
 }
 
-/* index.php */
-
 table#list {
     border-collapse: collapse;
     font-size: 80%;
@@ -71,6 +73,70 @@ table#list tr td {
 table#list tr td+td {
     border-left: 1px solid #cccccc;
     text-align: left;
+}
+
+table#create {
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+table#create tr th {
+    border: 1px solid #cccccc;
+    padding: 4px;
+    text-align: right;
+}
+
+table#create tr td {
+    border: 1px solid #cccccc;
+    padding: 4px;
+}
+
+table#create tr td input {
+    width: 500px;
+}
+
+table#create tr td select {
+    width: 200px;
+}
+
+table#create tr td textarea {
+    width: 500px;
+}
+
+table#create tr td input.submit {
+    width: 200px;
+}
+
+table#update {
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+table#update tr th {
+    border: 1px solid #cccccc;
+    padding: 4px;
+    text-align: right;
+}
+
+table#update tr td {
+    border: 1px solid #cccccc;
+    padding: 4px;
+}
+
+table#update tr td input {
+    width: 500px;
+}
+
+table#update tr td select {
+    width: 200px;
+}
+
+table#update tr td textarea {
+    width: 500px;
+}
+
+table#update tr td input.submit {
+    width: 200px;
 }
 
 /* issue.php */
@@ -113,39 +179,5 @@ div.revision p.message {
     background-color: white;
     margin: 2px 0 0 0;
     padding: 6px;
-}
-
-/* issue_create.php */
-
-table#create {
-    border-collapse: collapse;
-    font-size: 80%;
-}
-
-table#create tr th {
-    border: 1px solid #cccccc;
-    padding: 4px;
-    text-align: right;
-}
-
-table#create tr td {
-    border: 1px solid #cccccc;
-    padding: 4px;
-}
-
-table#create tr td input {
-    width: 500px;
-}
-
-table#create tr td select {
-    width: 200px;
-}
-
-table#create tr td textarea {
-    width: 500px;
-}
-
-table#create tr td input.submit {
-    width: 200px;
 }
 

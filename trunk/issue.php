@@ -18,19 +18,6 @@ if (empty($_GET["id"]) || !is_numeric($_GET["id"])) {
 
 header('Content-Type: text/html; charset=utf-8');
 
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-    <head>
-        <title>viewing an issue&mdash;<?php echo $project_name; ?></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" href="style.php" />
-    </head>
-    <body>
-        <div id="contain">
-            <h1><a href="index.php"><?php echo $project_name; ?></a></h1>
-<?php
-
 $sql = "SELECT {$table_prefix}owner.name        owner     ,                         ".
        "       {$table_prefix}milestone.name    milestone ,                         ".
        "       {$table_prefix}status.name       status    ,                         ".
@@ -59,8 +46,21 @@ $severity  = output($row["severity"]);
 $type      = output($row["type"]);
 $subject   = output($row["subject"]);
 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title><?php echo $subject; ?>&mdash;issue&mdash;<?php echo $project_name; ?></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="style.php" />
+    </head>
+    <body>
+        <div id="contain">
+            <h1><a href="index.php"><?php echo $project_name; ?></a></h1>
+<?php
+
 echo <<<EOF
-            <h2>issue: $subject</h2>
+            <h2><a href="index.php">issues</a> &raquo; $subject</h2>
             <table id="info">
                 <tr>
                     <th>owner</th>
