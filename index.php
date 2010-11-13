@@ -18,7 +18,7 @@ header('Content-Type: text/html; charset=utf-8');
         <div id="contain">
             <h1><?php echo $project_name; ?></h1>
             <h2>issues</h2>
-            <div id="create"><a href="issue_create.php">create an issue</a></div>
+            <div id="create"><a href="issue_create.php">create</a></div>
             <table id="list">
                 <tr>
                     <th>id</th>
@@ -77,6 +77,15 @@ EOF;
 
 ?>
             </table>
+            <h2>more</h2>
+            <ul id="more">
+                <li><a href="milestones.php">milestones</a></li>
+                <li><a href="severities.php">severities</a></li>
+                <li><a href="statuses.php">statuses</a></li>
+                <li><a href="types.php">types</a></li>
+                <li><a href="users.php">users</a></li>
+                <li><a href="index.php?goodbye">goodbye</a></li>
+            </ul>
         </div>
     </body>
 </html>
