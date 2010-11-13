@@ -1,0 +1,151 @@
+<?php
+
+header("Content-type: text/css");
+
+?>
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: black;
+}
+
+input {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+select {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+textarea {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+table#auth {
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+table#auth tr th {
+    border: 1px solid #cccccc;
+    padding: 4px;
+    text-align: right;
+}
+
+table#auth tr td {
+    border: 1px solid #cccccc;
+    padding: 4px;
+}
+
+table#auth tr td input {
+    width: 125px;
+}
+
+/* index.php */
+
+table#list {
+    border-collapse: collapse;
+    font-size: 80%;
+    margin-top: 25px;
+}
+
+table#list tr th {
+    padding: 2px 0.5em;
+    text-align: left;
+    border-top: 1px solid #000099;
+    border-bottom: 1px solid #000099;
+    background: #ccccff;
+}
+
+table#list tr td {
+    border-bottom: 1px solid #cccccc;
+    padding: 2px 0.5em;
+    text-align: right;
+}
+
+table#list tr td+td {
+    border-left: 1px solid #cccccc;
+    text-align: left;
+}
+
+/* issue.php */
+
+table#info {
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+table#info tr th {
+    padding: 2px 6px;
+    text-align: left;
+    border: 1px solid #cccccc;
+}
+
+table#info tr td {
+    border: 1px solid #cccccc;
+    padding: 2px 6px;
+}
+
+div.revision {
+    border: solid 1px #000099;
+    background-color: #ccccff;
+    margin-top: 25px;
+    width: 600px;
+}
+
+div.revision div.author {
+    float: left;
+    margin: 2px 6px;
+}
+
+div.revision div.date {
+    float: right;
+    margin: 2px 6px;
+}
+
+div.revision p.message {
+    clear: both;
+    background-color: white;
+    margin: 2px 0 0 0;
+    padding: 6px;
+}
+
+/* issue_create.php */
+
+table#create {
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+table#create tr th {
+    border: 1px solid #cccccc;
+    padding: 4px;
+    text-align: right;
+}
+
+table#create tr td {
+    border: 1px solid #cccccc;
+    padding: 4px;
+}
+
+table#create tr td input {
+    width: 500px;
+}
+
+table#create tr td select {
+    width: 200px;
+}
+
+table#create tr td textarea {
+    width: 500px;
+}
+
+table#create tr td input.submit {
+    width: 200px;
+}
+
