@@ -14,7 +14,7 @@ $dbms_db    = "database";
  *****************/
 $project_name = 'project of love';
 $table_prefix = 'bussd_';
-$uri_base     = 'http://www.projectoflove.com/';
+$uri_base     = 'http://www.projectoflove.com/bussd/';
 $admin_name   = 'larz';
 $date_format  = 'g\:i a, j M Y';
 $timezone     = 'America/Denver';
