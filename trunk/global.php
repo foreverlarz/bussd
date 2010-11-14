@@ -85,7 +85,7 @@ function outputmessage($text) {
  ***************/
 function outputdate($timestamp) {
     global $date_format;
-    return strtolower(gmdate($date_format, $timestamp));
+    return strtolower(date($date_format, $timestamp));
 };
 
 
