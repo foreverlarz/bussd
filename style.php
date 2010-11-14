@@ -190,9 +190,10 @@ fieldset#revise {
 }
 
 fieldset#revise textarea {
-    width: 600px;
+    width: 588px;
     border-width: 0;
     margin: 0;
+    padding: 6px;
 }
 
 fieldset#revise input.submit {
