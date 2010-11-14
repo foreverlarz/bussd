@@ -177,6 +177,7 @@ div.revision div.date {
 
 div.revision p.message {
     clear: both;
+    overflow: auto;
     background-color: white;
     margin: 2px 0 0 0;
     padding: 6px;
