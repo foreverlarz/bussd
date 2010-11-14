@@ -30,7 +30,7 @@ if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
            "FROM {$table_prefix}user    ".
            "WHERE name='$username'      ".
            "  AND password='$password'  ";
-    if (!$result = mysql_query($sql)) showerror();
+    if (!$result = mysql_query($sql)) print_error();
 
     if (mysql_num_rows($result) === 1) {
 
