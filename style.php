@@ -144,6 +144,7 @@ table#update tr td input.submit {
 table#info {
     border-collapse: collapse;
     font-size: 80%;
+    margin-top: 25px;
 }
 
 table#info tr th {
@@ -179,5 +180,66 @@ div.revision p.message {
     background-color: white;
     margin: 2px 0 0 0;
     padding: 6px;
+}
+
+fieldset#revise {
+    border: solid 1px #000099;
+    width: 600px;
+    margin: 25px 0 0 0;
+    padding: 0;
+}
+
+fieldset#revise textarea {
+    width: 600px;
+    border-width: 0;
+    margin: 0;
+}
+
+fieldset#revise input.submit {
+    width: 600px;
+    background-color: #ccccff;
+    border-width: 0;
+}
+
+/* issue_revise.php */
+
+table#revise {
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+table#revise tr th {
+    border: 1px solid #cccccc;
+    padding: 4px;
+    text-align: right;
+}
+
+table#revise tr th.more {
+    border: 1px solid #cccccc;
+    border-bottom: solid 1px #000099;
+    background: #ccccff;
+    padding: 4px;
+    text-align: center;
+}
+
+table#revise tr td {
+    border: 1px solid #cccccc;
+    padding: 4px;
+}
+
+table#revise tr td input {
+    width: 500px;
+}
+
+table#revise tr td select {
+    width: 200px;
+}
+
+table#revise tr td textarea {
+    width: 500px;
+}
+
+table#revise tr td input.submit {
+    width: 200px;
 }
 

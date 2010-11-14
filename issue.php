@@ -68,6 +68,7 @@ $subject   = output($row["subject"]);
 
 echo <<<EOF
             <h2><a href="index.php">issues</a> &raquo; $subject</h2>
+            <div id="revise"><a href="issue_revise.php?id=$id">revise</a></div>
             <table id="info">
                 <tr>
                     <th>owner</th>
@@ -137,6 +138,13 @@ EOF;
 };
 
 ?>
+            <form action="issue_revise.php" method="post">
+                <fieldset id="revise">
+                    <textarea cols="72" rows="10" name="message"></textarea>
+                    <input type="hidden" name="revise" value="<?php echo $id; ?>" />
+                    <input type="submit" value="submit" class="submit" />
+                </fieldset>
+            </form>
         </div>
     </body>
 </html>
