@@ -15,6 +15,11 @@ img {
     border-width: 0;
 }
 
+ul {
+    padding: 0 0 0 1em;
+    margin: 0;
+}
+
 input {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
@@ -181,6 +186,14 @@ div.revision p.message {
     background-color: white;
     margin: 2px 0 0 0;
     padding: 6px;
+}
+
+div.revision div.attributes {
+    clear: both;
+    overflow: auto;
+    background-color: #efefef;
+    padding: 6px;
+    font-size: 80%;
 }
 
 fieldset#revise {

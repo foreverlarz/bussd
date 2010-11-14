@@ -130,10 +130,33 @@ while ($row = mysql_fetch_array($result)) {
             <div class="revision">
                 <div class="author">$author</div>
                 <div class="date">$date</div>
-                <p class="message">$message</p>
-            </div>
 
 EOF;
+
+    if (!empty($message)) echo "                <p class=\"message\">$message</p>\n";
+
+    $history = '';
+    if (!empty($row["owner"])) $history .= "                        <li><strong>owner:</strong> ".output($row["owner"])."</li>\n";
+    if (!empty($row["milestone"])) $history .= "                        <li><strong>milestone:</strong> ".output($row["milestone"])."</li>\n";
+    if (!empty($row["status"])) $history .= "                        <li><strong>status:</strong> ".output($row["status"])."</li>\n";
+    if (!empty($row["severity"])) $history .= "                        <li><strong>severity:</strong> ".output($row["severity"])."</li>\n";
+    if (!empty($row["type"])) $history .= "                        <li><strong>type:</strong> ".output($row["type"])."</li>\n";
+    if (!empty($row["subject"])) $history .= "                        <li><strong>subject:</strong> ".output($row["subject"])."</li>\n";
+
+    if (!empty($history)) {
+
+        echo <<<EOF
+                <div class="attributes">
+                    <ul>
+$history                    </ul>
+                </div>
+
+EOF;
+
+
+    };
+
+    echo "            </div>\n";
 
 };
 
