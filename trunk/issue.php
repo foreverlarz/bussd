@@ -46,12 +46,12 @@ if (mysql_num_rows($result) !== 1) {
 
 $row = mysql_fetch_array($result);
 
-$owner     = output($row["owner"]);
-$milestone = output($row["milestone"]);
-$status    = output($row["status"]);
-$severity  = output($row["severity"]);
-$type      = output($row["type"]);
-$subject   = output($row["subject"]);
+$owner     = (empty($row["owner"]))     ? '<em>undetermined</em>' : output($row["owner"]);
+$milestone = (empty($row["milestone"])) ? '<em>undetermined</em>' : output($row["milestone"]);
+$status    = (empty($row["status"]))    ? '<em>undetermined</em>' : output($row["status"]);
+$severity  = (empty($row["severity"]))  ? '<em>undetermined</em>' : output($row["severity"]);
+$type      = (empty($row["type"]))      ? '<em>undetermined</em>' : output($row["type"]);
+$subject   = (empty($row["subject"]))   ? '<em>undetermined</em>' : output($row["subject"]);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
