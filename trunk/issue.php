@@ -46,12 +46,12 @@ if (mysql_num_rows($result) !== 1) {
 
 $row = mysql_fetch_array($result);
 
-$owner     = (empty($row["owner"]))     ? '<em>undetermined</em>' : output($row["owner"]);
-$milestone = (empty($row["milestone"])) ? '<em>undetermined</em>' : output($row["milestone"]);
-$status    = (empty($row["status"]))    ? '<em>undetermined</em>' : output($row["status"]);
-$severity  = (empty($row["severity"]))  ? '<em>undetermined</em>' : output($row["severity"]);
-$type      = (empty($row["type"]))      ? '<em>undetermined</em>' : output($row["type"]);
-$subject   = (empty($row["subject"]))   ? '<em>undetermined</em>' : output($row["subject"]);
+$owner     = output($row["owner"]);
+$milestone = output($row["milestone"]);
+$status    = output($row["status"]);
+$severity  = output($row["severity"]);
+$type      = output($row["type"]);
+$subject   = output($row["subject"]);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -94,16 +94,20 @@ echo <<<EOF
 
 EOF;
 
-$sql = "SELECT {$table_prefix}issue_revision.id      revision  ,                            ".
-       "       {$table_prefix}author.name            author    ,                            ".
-       "       {$table_prefix}issue_revision.date    date      ,                            ".
-       "       {$table_prefix}owner.name             owner     ,                            ".
-       "       {$table_prefix}milestone.name         milestone ,                            ".
-       "       {$table_prefix}status.name            status    ,                            ".
-       "       {$table_prefix}severity.name          severity  ,                            ".
-       "       {$table_prefix}type.name              type      ,                            ".
-       "       {$table_prefix}issue_revision.subject subject   ,                            ".
-       "       {$table_prefix}issue_revision.message message                                ".
+$sql = "SELECT {$table_prefix}issue_revision.date                       ,                   ".
+       "       {$table_prefix}issue_revision.owner_id                   ,                   ".
+       "       {$table_prefix}issue_revision.milestone_id               ,                   ".
+       "       {$table_prefix}issue_revision.status_id                  ,                   ".
+       "       {$table_prefix}issue_revision.severity_id                ,                   ".
+       "       {$table_prefix}issue_revision.type_id                    ,                   ".
+       "       {$table_prefix}issue_revision.subject                    ,                   ".
+       "       {$table_prefix}issue_revision.message                    ,                   ".
+       "       {$table_prefix}author.name                   author      ,                   ".
+       "       {$table_prefix}owner.name                    owner       ,                   ".
+       "       {$table_prefix}milestone.name                milestone   ,                   ".
+       "       {$table_prefix}status.name                   status      ,                   ".
+       "       {$table_prefix}severity.name                 severity    ,                   ".
+       "       {$table_prefix}type.name                     type                            ".
        "FROM {$table_prefix}issue_revision                                                  ".
        "LEFT JOIN {$table_prefix}user {$table_prefix}author                                 ".
        "       ON {$table_prefix}author.id = {$table_prefix}issue_revision.author_id        ".
@@ -136,12 +140,12 @@ EOF;
     if (!empty($message)) echo "                <p class=\"message\">$message</p>\n";
 
     $history = '';
-    if (!empty($row["owner"])) $history .= "                        <li><strong>owner:</strong> ".output($row["owner"])."</li>\n";
-    if (!empty($row["milestone"])) $history .= "                        <li><strong>milestone:</strong> ".output($row["milestone"])."</li>\n";
-    if (!empty($row["status"])) $history .= "                        <li><strong>status:</strong> ".output($row["status"])."</li>\n";
-    if (!empty($row["severity"])) $history .= "                        <li><strong>severity:</strong> ".output($row["severity"])."</li>\n";
-    if (!empty($row["type"])) $history .= "                        <li><strong>type:</strong> ".output($row["type"])."</li>\n";
-    if (!empty($row["subject"])) $history .= "                        <li><strong>subject:</strong> ".output($row["subject"])."</li>\n";
+    if ($row["owner_id"]     !== NULL) $history .= "                        <li><strong>owner:</strong> ".     output($row["owner"]).      "</li>\n";
+    if ($row["milestone_id"] !== NULL) $history .= "                        <li><strong>milestone:</strong> ". output($row["milestone"]).  "</li>\n";
+    if ($row["status_id"]    !== NULL) $history .= "                        <li><strong>status:</strong> ".    output($row["status"]).     "</li>\n";
+    if ($row["severity_id"]  !== NULL) $history .= "                        <li><strong>severity:</strong> ".  output($row["severity"]).   "</li>\n";
+    if ($row["type_id"]      !== NULL) $history .= "                        <li><strong>type:</strong> ".      output($row["type"]).       "</li>\n";
+    if ($row["subject"]      !== NULL) $history .= "                        <li><strong>subject:</strong> ".   output($row["subject"]).    "</li>\n";
 
     if (!empty($history)) {
 
