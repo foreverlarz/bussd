@@ -51,6 +51,8 @@ if (isset($_POST["create"])) {
             "    message        = $message              ";
     if (!$result = mysql_query($sql)) print_error();
 
+    if (is_numeric($owner) && $owner != $bussd["user_id"]) bust_an_email($owner, $issue_id, 'created');
+
     header("Location: issue.php?id=$issue_id");
 
 }
