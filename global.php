@@ -90,6 +90,15 @@ function outputdate($timestamp) {
 };
 
 
+/**********************
+ * EMAIL NOTIFICATION *
+ **********************/
+function bust_an_email($user, $issue, $action) {
+
+
+};
+
+
 /*************************
  * CONNECT TO MYSQL DBMS *
  *************************/

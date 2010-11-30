@@ -86,6 +86,13 @@ if (isset($_POST["revise"])) {
         
     };
 
+    if ($owner != 'DEFAULT') {
+
+        if ($owner != $bussd["user_id"]) bust_an_email($owner, $issue_id, 'given');
+        if ($current["owner_id"] != $bussd["user_id"]) bust_an_email($current["owner_id"], $issue_id, 'taken');
+
+    };
+
     header("Location: issue.php?id=$issue_id");
 
 };
