@@ -140,12 +140,12 @@ EOF;
     if (!empty($message)) echo "                <p class=\"message\">$message</p>\n";
 
     $history = '';
-    if ($row["owner_id"]     !== NULL) $history .= "                        <li><strong>owner:</strong> ".     output($row["owner"]).      "</li>\n";
-    if ($row["milestone_id"] !== NULL) $history .= "                        <li><strong>milestone:</strong> ". output($row["milestone"]).  "</li>\n";
-    if ($row["status_id"]    !== NULL) $history .= "                        <li><strong>status:</strong> ".    output($row["status"]).     "</li>\n";
-    if ($row["severity_id"]  !== NULL) $history .= "                        <li><strong>severity:</strong> ".  output($row["severity"]).   "</li>\n";
-    if ($row["type_id"]      !== NULL) $history .= "                        <li><strong>type:</strong> ".      output($row["type"]).       "</li>\n";
-    if ($row["subject"]      !== NULL) $history .= "                        <li><strong>subject:</strong> ".   output($row["subject"]).    "</li>\n";
+    if ($row["owner_id"]     !== NULL) $history .= "                        <li><strong>owner:</strong> ".     output($row["owner"]     ,1)."</li>\n";
+    if ($row["milestone_id"] !== NULL) $history .= "                        <li><strong>milestone:</strong> ". output($row["milestone"] ,1)."</li>\n";
+    if ($row["status_id"]    !== NULL) $history .= "                        <li><strong>status:</strong> ".    output($row["status"]    ,1)."</li>\n";
+    if ($row["severity_id"]  !== NULL) $history .= "                        <li><strong>severity:</strong> ".  output($row["severity"]  ,1)."</li>\n";
+    if ($row["type_id"]      !== NULL) $history .= "                        <li><strong>type:</strong> ".      output($row["type"]      ,1)."</li>\n";
+    if ($row["subject"]      !== NULL) $history .= "                        <li><strong>subject:</strong> ".   output($row["subject"]   ,1)."</li>\n";
 
     if (!empty($history)) {
 

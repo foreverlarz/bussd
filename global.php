@@ -67,12 +67,9 @@ function clean($text) {
 /*****************
  * FORMAT OUTPUT *
  *****************/
-function output($text) {
-    if ($text === NULL || $text === '') {
-        return '<em>unspecified</em>';
-    } else {
-        return htmlspecialchars($text, ENT_COMPAT, "UTF-8");
-    };
+function output($text, $blank = 0) {
+    if ($blank == 1 && ($text === NULL || $text === '')) return '<em>unspecified</em>';
+    return htmlspecialchars($text, ENT_COMPAT, "UTF-8");
 };
 
 
