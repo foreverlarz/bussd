@@ -122,7 +122,7 @@ $sql = "SELECT {$table_prefix}issue_revision.date                       ,       
        "LEFT JOIN {$table_prefix}type                                                       ".
        "       ON {$table_prefix}type.id = {$table_prefix}issue_revision.type_id            ".
        "WHERE {$table_prefix}issue_revision.issue_id = $id                                  ".
-       "ORDER BY {$table_prefix}issue_revision.date                                         ";
+       "ORDER BY {$table_prefix}issue_revision.id                                           ";
 if (!$result = mysql_query($sql)) print_error();
 while ($row = mysql_fetch_array($result)) {
 
