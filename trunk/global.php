@@ -95,6 +95,37 @@ function outputdate($timestamp) {
  **********************/
 function bust_an_email($user, $issue, $action) {
 
+    global $uri_base, $admin_name, $admin_email;
+
+    if (!is_numeric($user)) return;
+
+    $sql = "SELECT name, email          ".
+           "FROM {$table_prefix}user    ".
+           "WHERE id = $user            ";
+    if (!$result = mysql_query($sql)) print_error();
+
+    if (mysql_num_rows($result) !== 1) return;
+
+    $user = mysql_fetch_array($result);
+
+    if ($action == 'created') $object = 'for you';
+    if ($action == 'given')   $object = 'to you';
+    if ($action == 'taken')   $object = 'from you';
+
+    $subject = "issue $issue $action $object";
+
+    $message = <<<EOF
+hello, {$user["name"]}!
+
+issue $issue has been $action $object.
+
+{$uri_base}issue.php?id={$issue}
+
+cheers,
+$admin_name
+EOF;
+
+    return mail($user["email"], $subject, $message, "From: $admin_name <$admin_email>");
 
 };
 

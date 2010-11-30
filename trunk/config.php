@@ -15,7 +15,8 @@ $dbms_db    = "database";
 $project_name = 'project of love';
 $table_prefix = 'bussd_';
 $uri_base     = 'http://www.projectoflove.com/bussd/';
-$admin_name   = 'larz';
+$admin_name   = 'scarlette';
+$admin_email  = 'scarlette@wingedleopard.net';
 $date_format  = 'g\:i a, j M Y';
 $timezone     = 'America/Denver';
 
