@@ -4,6 +4,7 @@ require_once "global.php";
 
 
 
+/* do not allow deletion. revisions rely on these data
 if (!empty($_GET["delete"])) {
 
     if (!is_numeric($_GET["delete"])) {
@@ -23,6 +24,7 @@ if (!empty($_GET["delete"])) {
     header("Location: statuses.php");
 
 };
+*/
 
 
 
@@ -216,7 +218,7 @@ while ($row = mysql_fetch_array($result)) {
                     <td>$name</td>
                     <td>
                         <a href="statuses.php?update=$id"><img src="icon_update.png" alt="update" /></a>
-                        <a href="statuses.php?delete=$id"><img src="icon_delete.png" alt="delete" /></a>
+                        <!--<a href="statuses.php?delete=$id"><img src="icon_delete.png" alt="delete" /></a>-->
                     </td>
                 </tr>
 
