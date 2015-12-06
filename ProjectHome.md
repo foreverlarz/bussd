@@ -1,0 +1,1 @@
+Yes, we like tracking issues on closed source projects.
